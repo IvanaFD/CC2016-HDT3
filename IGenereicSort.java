@@ -16,7 +16,7 @@ interface IGenereicSort<T extends Comparable <T>> {
     
     void insertionSort (ArrayList<T> list);
     void mergeSort (ArrayList<T> list);
-    
+    void quickSort (ArrayList<T> list);
     void radixSort (ArrayList<T> list);
     void cocktailSort (ArrayList<T> list);
     

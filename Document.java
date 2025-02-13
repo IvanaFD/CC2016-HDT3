@@ -1,3 +1,16 @@
+
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos - Seccion 31
+ * Hoja de Trabajo 3
+ * Integrantes:
+ * Diana Sosa 241040
+ * Ivana Figueroa 24785
+ * 
+ * Clase Document
+ * se generara dependiendo lo indicado del usuario la cantidad de lineas randoms y se guardaran en documento tipo txt
+ * 
+ */
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;

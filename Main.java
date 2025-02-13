@@ -24,5 +24,9 @@ public class Main {
         sorter.cocktailSort(new ArrayList<>(numbers));
 
         scanner.close();
+
+
+
+    
     }
 }

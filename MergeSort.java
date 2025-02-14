@@ -1,29 +1,7 @@
 import java.util.Arrays;
 
-<<<<<<< HEAD
-/**
- * Universidad del Valle de Guatemala
- * Algoritmos y Estructuras de Datos - Sección 31
- * Hoja de Trabajo 3
- * Integrantes:
- * Diana Sosa 241040
- * Ivana Figueroa 24785
- * 
- * Clase MergeSort
- * Implementación del algoritmo de ordenamiento Merge Sort.
- * Divide recursivamente el arreglo en mitades, las ordena y luego las fusiona.
- * Utiliza el enfoque divide y vencerás para realizar el ordenamiento.
- * 
- * Métodos:
- * - sort: Realiza el ordenamiento recursivo del arreglo, dividiéndolo en mitades hasta que
- *   cada subarreglo tenga un solo elemento, luego fusiona los subarreglos ordenados.
- * - merge: Fusiona dos subarreglos ordenados en uno solo, manteniendo el orden.
- */
-public class MergeSort<T extends Comparable<T>> implements IGenereicSort<T> {
-=======
 // referencia del merge sort: https://www.w3schools.com/dsa/trydsa.php?filename=demo_mergesort
 public class MergeSort<T extends Comparable<T>> implements IGenericSort<T>{
->>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c
 
     /**
      * Ordena un arreglo utilizando el algoritmo Merge Sort.

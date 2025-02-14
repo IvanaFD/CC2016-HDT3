@@ -1,28 +1,4 @@
-<<<<<<< HEAD
-/**
- * Universidad del Valle de Guatemala
- * Algoritmos y Estructuras de Datos - Sección 31
- * Hoja de Trabajo 3
- * Integrantes:
- * Diana Sosa 241040
- * Ivana Figueroa 24785
- * 
- * Clase QuickSort
- * Implementación del algoritmo QuickSort, un algoritmo de ordenamiento eficiente
- * basado en la estrategia de "divide y vencerás". El algoritmo selecciona un 
- * pivote y organiza los elementos en torno a él, realizando particiones recursivas
- * hasta obtener un arreglo ordenado.
- * 
- * Métodos:
- * - sort: Método principal que ordena el arreglo utilizando el algoritmo QuickSort.
- * - quickSort: Método recursivo que realiza la ordenación mediante particiones.
- * - partition: Método que organiza el arreglo en torno a un pivote y devuelve
- *   la posición del pivote.
- */
-public class QuickSort<T extends Comparable<T>> implements IGenereicSort<T> {
-=======
 public class QuickSort<T extends Comparable<T>> implements IGenericSort<T> {
->>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c
 
     /**
      * Ordena un arreglo utilizando el algoritmo QuickSort.

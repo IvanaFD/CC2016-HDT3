@@ -19,7 +19,7 @@
  * Métodos:
  * - sort: Implementa el algoritmo de ordenamiento por inserción sobre el arreglo dado.
  */
-public class InsertionSort<T extends Comparable<T>> implements IGenereicSort<T> {
+public class InsertionSort<T extends Comparable<T>> implements IGenericSort<T> {
 
     /**
      * Ordena un arreglo de objetos del tipo T usando el algoritmo de ordenamiento por inserción.

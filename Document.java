@@ -49,9 +49,6 @@ public class Document {
             System.out.println("Error: " + e.getMessage());
         }
     }
-<<<<<<< HEAD
-}
-=======
 
     public MyComparable[] readDocument() {
         ArrayList<MyComparable> list = new ArrayList<>();
@@ -85,4 +82,3 @@ public class Document {
 
 
 }
->>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c

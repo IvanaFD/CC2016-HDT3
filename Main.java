@@ -8,6 +8,11 @@ import java.util.Scanner;
  * Algoritmos y Estructuras de Datos - Sección 31
  * Hoja de Trabajo 3
  * 
+ * Integrantes:
+ * Diana Sosa 241040
+ * Ivana Figueroa 24785
+ * 
+ * 
  * Clase Main
  * Contiene el punto de entrada del programa, permitiendo al usuario generar un documento
  * con números aleatorios y ordenarlo utilizando distintos algoritmos de ordenamiento.

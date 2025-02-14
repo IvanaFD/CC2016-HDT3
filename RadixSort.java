@@ -1,3 +1,12 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos - Sección 31
+ * Hoja de Trabajo 3
+ * 
+ * Integrantes:
+ * Diana Sosa 241040
+ * Ivana Figueroa 24785
+ */
 import java.util.Arrays;
 
 public class RadixSort implements IGenericSort<MyComparable> {

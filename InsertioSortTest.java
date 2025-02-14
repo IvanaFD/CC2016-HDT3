@@ -1,5 +1,3 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
 
 /**
  * Universidad del Valle de Guatemala
@@ -20,7 +18,10 @@ import org.junit.jupiter.api.Test;
  * - testSortWithSingleElement: Verifica el comportamiento del algoritmo con un arreglo que contiene un solo elemento.
  * - testSortAlreadySorted: Verifica que el algoritmo no altere un arreglo que ya está ordenado.
  * - testSortWithDuplicates: Verifica que el algoritmo maneje correctamente los arreglos con elementos duplicados.
- */
+ */import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+
 public class InsertioSortTest {
 
     /**

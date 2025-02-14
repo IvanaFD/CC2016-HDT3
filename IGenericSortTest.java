@@ -1,14 +1,16 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * Universidad del Valle de Guatemala
  * Algoritmos y Estructuras de Datos - Sección 31
  * Hoja de Trabajo 3
+ * Integrantes:
+ * Diana Sosa 241040
+ * Ivana Figueroa 24785
  * 
- * Pruebas unitarias para la implementación de la interfaz IGenericSort.
- * Se realizan pruebas utilizando una implementación concreta de la interfaz.
+ *
  */
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 class IGenericSortTest {
 
     /**

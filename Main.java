@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -30,7 +30,17 @@ public class Main {
         System.out.print("Ingresa la cantidad de números por línea: ");
         int wordsPerLine = scanner.nextInt();
 
-        document.createDocument(lines, wordsPerLine);
+        
+        MyComparable[] numberArray;
+        if (menuChoice == 1) {
+            System.out.print("Ingresa la cantidad de líneas (10 a 3000): ");
+            int lines = scanner.nextInt();
+            System.out.print("Ingresa la cantidad de números por línea: ");
+            int wordsPerLine = scanner.nextInt();
+            document.createDocument(lines, wordsPerLine);
+        }
+        
+        numberArray = document.readDocument();
 
         ArrayList<MyComparable> numberList = document.readDocument(MyComparable.class);
         MyComparable[] numbers = numberList.toArray(new MyComparable[0]); 
@@ -41,6 +51,7 @@ public class Main {
         IGenericSort<MyComparable> radixSort = new RadixSort<>();
         IGenericSort<MyComparable> cocktailSort = new CocktailSort<>();
 
+        
         boolean running = true;
         while (running) {
             System.out.println("\n===== MENÚ DE ORDENAMIENTO =====");
@@ -53,7 +64,7 @@ public class Main {
             System.out.print("Elige una opción: ");
 
             int choice = scanner.nextInt();
-            MyComparable[] sortedArray = Arrays.copyOf(numbers, numbers.length); 
+            MyComparable[] sortedArray = Arrays.copyOf(numberArray, numberArray.length); 
 
             switch (choice) {
                 case 1:
@@ -77,7 +88,7 @@ public class Main {
                     sortedArray = cocktailSort.sort(sortedArray);
                     break;
                 case 6:
-                    System.out.println("\nSaliendo del programa. ¡Hasta luego!");
+                    document.writeSortedData(sortedArray);
                     running = false;
                     continue;
                 default:
@@ -86,6 +97,7 @@ public class Main {
             }
 
             System.out.println("Resultado: " + Arrays.toString(sortedArray));
+        
         }
 
         scanner.close();

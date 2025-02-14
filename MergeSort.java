@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+<<<<<<< HEAD
 /**
  * Universidad del Valle de Guatemala
  * Algoritmos y Estructuras de Datos - Sección 31
@@ -19,6 +20,10 @@ import java.util.Arrays;
  * - merge: Fusiona dos subarreglos ordenados en uno solo, manteniendo el orden.
  */
 public class MergeSort<T extends Comparable<T>> implements IGenereicSort<T> {
+=======
+// referencia del merge sort: https://www.w3schools.com/dsa/trydsa.php?filename=demo_mergesort
+public class MergeSort<T extends Comparable<T>> implements IGenericSort<T>{
+>>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c
 
     /**
      * Ordena un arreglo utilizando el algoritmo Merge Sort.

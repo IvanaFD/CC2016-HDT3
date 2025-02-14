@@ -1,5 +1,6 @@
 import java.util.*;
 
+<<<<<<< HEAD
 /**
  * Universidad del Valle de Guatemala
  * Algoritmos y Estructuras de Datos - Sección 31
@@ -20,9 +21,13 @@ public class RadixSort<T extends Comparable<T>> implements IGenereicSort<T> {
      * @param arr El arreglo de elementos genéricos a ordenar.
      * @return Un nuevo arreglo ordenado.
      */
+=======
+public class RadixSort implements IGenericSort<MyComparable> {
+>>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c
     @Override
-    public T[] sort(T[] arr) {
+    public MyComparable[] sort(MyComparable[] arr) {
         if (arr.length == 0) return arr;
+<<<<<<< HEAD
 
         int maxDigits = getMaxDigits(arr);
 
@@ -59,6 +64,28 @@ public class RadixSort<T extends Comparable<T>> implements IGenereicSort<T> {
         Map<Character, Queue<T>> buckets = new HashMap<>();
         for (char c = '0'; c <= '9'; c++) {
             buckets.put(c, new LinkedList<>());
+=======
+        Integer[] intArr = new Integer[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            intArr[i] = Integer.parseInt(arr[i].toString());
+        }
+        int max = Arrays.stream(intArr).max(Integer::compare).orElse(0);
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countingSortByDigit(intArr, exp);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = new MyComparable(intArr[i]);
+        }
+        return arr;
+    }
+
+    private void countingSortByDigit(Integer[] arr, int exp) {
+        int n = arr.length;
+        Integer[] output = new Integer[n];
+        int[] count = new int[10];
+        for (int num : arr) {
+            count[(num / exp) % 10]++;
+>>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c
         }
 
         for (T item : arr) {
@@ -75,4 +102,3 @@ public class RadixSort<T extends Comparable<T>> implements IGenereicSort<T> {
         return sortedList.toArray(arr);
     }
 }
-

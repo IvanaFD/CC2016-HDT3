@@ -18,7 +18,13 @@
  * - sort: Método abstracto que debe ser implementado para ordenar un arreglo
  *   de objetos del tipo T.
  */
+<<<<<<< HEAD:IGenereicSort.java
 interface IGenericSort<T extends Comparable<T>> {
+=======
+
+
+interface IGenericSort<T extends Comparable <T>> {
+>>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c:IGenericSort.java
     
    /**
     * Ordena un arreglo de objetos del tipo T.

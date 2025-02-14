@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Implementación del algoritmo de ordenamiento Cocktail Sort, también conocido como
  * Bidirectional Bubble Sort. Este algoritmo mejora el Bubble Sort clásico al recorrer
@@ -19,6 +20,9 @@ public class CocktailSort<T extends Comparable<T>> implements IGenereicSort<T> {
      * @param arr El arreglo a ordenar.
      * @return El arreglo ordenado.
      */
+=======
+public class CocktailSort<T extends Comparable<T>> implements IGenericSort<T> {
+>>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c
     @Override
     public T[] sort(T[] arr) {
         boolean swapped;

@@ -15,8 +15,12 @@
  * - createDocument: Crea un archivo de texto con una cantidad específica de líneas y palabras 
  *   aleatorias en cada línea.
  */
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Document {
@@ -45,4 +49,40 @@ public class Document {
             System.out.println("Error: " + e.getMessage());
         }
     }
+<<<<<<< HEAD
 }
+=======
+
+    public MyComparable[] readDocument() {
+        ArrayList<MyComparable> list = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] tokens = line.trim().split("\\s+");
+                for (String token : tokens) {
+                    if (!token.isEmpty()) {
+                        int value = Integer.parseInt(token);
+                        list.add(new MyComparable(value));
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el documento: " + e.getMessage());
+        }
+        return list.toArray(new MyComparable[0]);
+    }
+
+    public void writeSortedData(MyComparable[] sortedArray) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (MyComparable num : sortedArray) {
+                writer.write(num.toString() + " ");
+            }
+            writer.newLine();
+        } catch (IOException e) {
+            System.err.println("Error al guardar los datos ordenados: " + e.getMessage());
+        }
+    }
+
+
+}
+>>>>>>> 3df9a86cd76d5e34c42884c1dd76340929d61f0c

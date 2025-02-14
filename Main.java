@@ -1,5 +1,4 @@
 
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,11 +24,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Document document = new Document();
 
-        System.out.println("\n===== MENÚ =====");
-        System.out.println("1. Generar nuevo documento");
-        System.out.println("2. Leer documento existente");
-        System.out.print("Elige una opción: ");
-        int menuChoice = scanner.nextInt();
+        System.out.println("\n===== GENERADOR DE DOCUMENTO =====");
+        System.out.print("Ingresa la cantidad de líneas (10 a 3000): ");
+        int lines = scanner.nextInt();
+        System.out.print("Ingresa la cantidad de números por línea: ");
+        int wordsPerLine = scanner.nextInt();
 
         
         MyComparable[] numberArray;
@@ -43,16 +42,13 @@ public class Main {
         
         numberArray = document.readDocument();
 
-        if (numberArray.length == 0) {
-            System.out.println("El documento está vacío. No hay datos para ordenar.");
-            scanner.close();
-            return;
-        }
-        
-        IGenericSort<MyComparable> insertionSort = new InsertioSort<>();
+        ArrayList<MyComparable> numberList = document.readDocument(MyComparable.class);
+        MyComparable[] numbers = numberList.toArray(new MyComparable[0]); 
+
+        IGenericSort<MyComparable> insertionSort = new InsertionSort<>();
         IGenericSort<MyComparable> quickSort = new QuickSort<>();
         IGenericSort<MyComparable> mergeSort = new MergeSort<>();
-        IGenericSort<MyComparable> radixSort = new RadixSort();
+        IGenericSort<MyComparable> radixSort = new RadixSort<>();
         IGenericSort<MyComparable> cocktailSort = new CocktailSort<>();
 
         
@@ -65,7 +61,7 @@ public class Main {
             System.out.println("4. Radix Sort");
             System.out.println("5. Cocktail Sort");
             System.out.println("6. Salir");
-            System.out.print("Elige una opción :) : ");
+            System.out.print("Elige una opción: ");
 
             int choice = scanner.nextInt();
             MyComparable[] sortedArray = Arrays.copyOf(numberArray, numberArray.length); 
@@ -96,7 +92,7 @@ public class Main {
                     running = false;
                     continue;
                 default:
-                    System.out.println("\nOpción inválida :( . Inténtalo de nuevo.");
+                    System.out.println("\nOpción inválida. Inténtalo de nuevo.");
                     continue;
             }
 

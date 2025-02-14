@@ -1,4 +1,4 @@
-public class CocktailSort<T extends Comparable<T>> implements IGenereicSort<T> {
+public class CocktailSort<T extends Comparable<T>> implements IGenericSort<T> {
     @Override
     public T[] sort(T[] arr) {
         boolean swapped;

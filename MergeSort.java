@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 // referencia del merge sort: https://www.w3schools.com/dsa/trydsa.php?filename=demo_mergesort
-public class MergeSort<T extends Comparable<T>> implements IGenereicSort<T>{
+public class MergeSort<T extends Comparable<T>> implements IGenericSort<T>{
 
     @Override
     public T[] sort(T[] arr) {

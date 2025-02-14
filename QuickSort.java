@@ -1,4 +1,4 @@
-public class QuickSort<T extends Comparable<T>> implements IGenereicSort<T> {
+public class QuickSort<T extends Comparable<T>> implements IGenericSort<T> {
 
 
     // referencia de quickSort: https://www.w3schools.com/dsa/trydsa.php?filename=demo_quicksort

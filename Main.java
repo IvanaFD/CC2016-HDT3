@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,23 +7,37 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Document document = new Document();
 
-        System.out.println("\n===== GENERADOR DE DOCUMENTO =====");
-        System.out.print("Ingresa la cantidad de líneas 10 a 3000 :) : ");
-        int lines = scanner.nextInt();
-        System.out.print("Ingresa la cantidad de números por línea: ");
-        int wordsPerLine = scanner.nextInt();
+        System.out.println("\n===== MENÚ =====");
+        System.out.println("1. Generar nuevo documento");
+        System.out.println("2. Leer documento existente");
+        System.out.print("Elige una opción: ");
+        int menuChoice = scanner.nextInt();
 
-        document.createDocument(lines, wordsPerLine);
+        
+        MyComparable[] numberArray;
+        if (menuChoice == 1) {
+            System.out.print("Ingresa la cantidad de líneas (10 a 3000): ");
+            int lines = scanner.nextInt();
+            System.out.print("Ingresa la cantidad de números por línea: ");
+            int wordsPerLine = scanner.nextInt();
+            document.createDocument(lines, wordsPerLine);
+        }
+        
+        numberArray = document.readDocument();
 
-        ArrayList<MyComparable> numberList = document.readDocument(MyComparable.class);
-        MyComparable[] numbers = numberList.toArray(new MyComparable[0]); 
+        if (numberArray.length == 0) {
+            System.out.println("El documento está vacío. No hay datos para ordenar.");
+            scanner.close();
+            return;
+        }
+        
+        IGenericSort<MyComparable> insertionSort = new InsertioSort<>();
+        IGenericSort<MyComparable> quickSort = new QuickSort<>();
+        IGenericSort<MyComparable> mergeSort = new MergeSort<>();
+        IGenericSort<MyComparable> radixSort = new RadixSort();
+        IGenericSort<MyComparable> cocktailSort = new CocktailSort<>();
 
-        IGenereicSort<MyComparable> insertionSort = new InsertioSort<>();
-        IGenereicSort<MyComparable> quickSort = new QuickSort<>();
-        IGenereicSort<MyComparable> mergeSort = new MergeSort<>();
-        IGenereicSort<MyComparable> radixSort = new RadixSort<>();
-        IGenereicSort<MyComparable> cocktailSort = new CocktailSort<>();
-
+        
         boolean running = true;
         while (running) {
             System.out.println("\n===== MENÚ DE ORDENAMIENTO =====");
@@ -36,7 +50,7 @@ public class Main {
             System.out.print("Elige una opción :) : ");
 
             int choice = scanner.nextInt();
-            MyComparable[] sortedArray = Arrays.copyOf(numbers, numbers.length); 
+            MyComparable[] sortedArray = Arrays.copyOf(numberArray, numberArray.length); 
 
             switch (choice) {
                 case 1:
@@ -60,7 +74,7 @@ public class Main {
                     sortedArray = cocktailSort.sort(sortedArray);
                     break;
                 case 6:
-                    System.out.println("\nSaliendo del programa. ¡Hasta luego!");
+                    document.writeSortedData(sortedArray);
                     running = false;
                     continue;
                 default:
@@ -69,6 +83,7 @@ public class Main {
             }
 
             System.out.println("Resultado: " + Arrays.toString(sortedArray));
+        
         }
 
         scanner.close();

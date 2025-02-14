@@ -1,4 +1,4 @@
-public class InsertioSort<T extends Comparable<T>> implements IGenereicSort<T> {
+public class InsertioSort<T extends Comparable<T>> implements IGenericSort<T> {
     
 
     //referencia del insertion sort: https://www.w3schools.com/dsa/trydsa.php?filename=demo_insertionsort

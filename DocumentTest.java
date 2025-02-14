@@ -5,10 +5,34 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos - Sección 31
+ * Hoja de Trabajo 3
+ * Integrantes:
+ * Diana Sosa 241040
+ * Ivana Figueroa 24785
+ * 
+ * Clase DocumentTest
+ * Esta clase contiene pruebas unitarias para la clase Document, verificando el comportamiento de 
+ * su método createDocument, que genera un archivo de texto con líneas y palabras aleatorias.
+ * Las pruebas cubren diversos casos, como la creación de un documento vacío, un documento con una línea, 
+ * y un documento con múltiples líneas.
+ * 
+ * Métodos:
+ * - testCreateDocument: Verifica que el documento se cree correctamente con el número esperado de líneas 
+ *   y palabras en el rango especificado.
+ * - testEmptyDocument: Verifica que si se solicita un documento sin líneas, el archivo se quede vacío.
+ * - testSingleLineDocument: Verifica que se cree un archivo con una sola línea de palabras aleatorias.
+ */
 class DocumentTest {
 
     private static final String FILE_NAME = "document.txt";
 
+    /**
+     * Verifica que el método createDocument cree un archivo con el número correcto de líneas y palabras,
+     * y que los números generados estén dentro del rango esperado.
+     */
     @Test
     void testCreateDocument() {
         Document document = new Document();
@@ -36,6 +60,9 @@ class DocumentTest {
         }
     }
     
+    /**
+     * Verifica que si el número de líneas es 0, el archivo generado esté vacío.
+     */
     @Test
     void testEmptyDocument() {
         Document document = new Document();
@@ -52,6 +79,10 @@ class DocumentTest {
         }
     }
 
+    /**
+     * Verifica que si se solicita un documento con una sola línea, el archivo contenga esa línea y el número
+     * esperado de palabras.
+     */
     @Test
     void testSingleLineDocument() {
         Document document = new Document();
@@ -71,5 +102,6 @@ class DocumentTest {
         }
     }
 }
+
 
 
